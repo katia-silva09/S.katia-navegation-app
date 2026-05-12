@@ -1,36 +1,45 @@
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 // IMPORTANTE: Importar el CSS global
-import { Link } from 'expo-router'; // Importamos el componente Link
+import { Link, router } from 'expo-router'; // Importamos el componente Link
+import { SafeAreaView } from "react-native-safe-area-context";
 import './global.css';
 
-const App = () => {
-return (
-    <View className="flex-1 px-10 py-20">
-      <Text className="text-4xl font-work-black text-primary mb-10">
-        Menú Principal
-      </Text>
+import CustomButton from '@/components/shared/CustomButton';
 
-      {/* Navegación a Productos */}
-      <Link href="/products" className="mb-5">
-        <Text className="text-xl font-work-medium text-secondary">
-          Ir a Productos
-        </Text>
-      </Link>
+const HomeScreen = () => {
+  return (
+    // SafeAreaView protege nuestro contenido de los bordes físicos del teléfono
+    <SafeAreaView>
+      <View className="px-10 mt-5">
+        
+        {/* Opción 1: Navegación Declarativa con Link */}
+        <Link href={"/products"} asChild>
+          <CustomButton className="mb-10" color="primary">
+            Productos (Link)
+          </CustomButton>
+        </Link>
 
-      {/* Navegación a Perfil */}
-      <Link href="/profile" className="mb-5">
-        <Text className="text-xl font-work-medium text-secondary">
-          Ir a Perfil
-        </Text>
-      </Link>
+        {/* Opción 2: Navegación Imperativa con router.push */}
+        <CustomButton
+          className="mb-10"
+          color="primary"
+          onPress={() => router.push("/products")}
+        >
+          Productos (Router)
+        </CustomButton>
 
-      {/* Navegación a Ajustes */}
-      <Link href="/settings">
-        <Text className="text-xl font-work-medium text-secondary">
-          Ir a Ajustes
-        </Text>
-      </Link>
-    </View>
-  );};
+        {/* Opción 3: Probando nuestra nueva variante text-only */}
+        <CustomButton
+          variant="text-only"
+          onPress={() => router.push("/products")}
+          className="mb-10"
+        >
+          Productos (Solo Texto)
+        </CustomButton>
 
-export default App;
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default HomeScreen;
