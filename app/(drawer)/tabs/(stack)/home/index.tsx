@@ -6,20 +6,20 @@ import { SafeAreaView } from "react-native-safe-area-context";
 const HomeScreen = () => {
   return (
     <SafeAreaView>
-      <View className="px-10 mt-5">
+      <View style={{ paddingHorizontal: 40, marginTop: 20 }}>
         
         {/* Navegación Imperativa (Router) */}
         <CustomButton
           className="mb-2"
           color="primary"
-          onPress={() => router.push("/tabs/products")}
+          onPress={() => router.push("/drawer/tabs/products")}
         >
           Productos
         </CustomButton>
 
         <CustomButton
           color="secondary"
-          onPress={() => router.push("/tabs/profile")}
+          onPress={() => router.push("/drawer/tabs/profile")}
           className="mb-2"
         >
           Perfil
@@ -27,14 +27,14 @@ const HomeScreen = () => {
 
         <CustomButton
           color="tertiary"
-          onPress={() => router.push("/tabs/settings")}
+          onPress={() => router.push("/drawer/tabs/settings")}
           className="mb-2"
         >
           Ajustes
         </CustomButton>
 
         {/* Navegación Declarativa (Link) con Variante de Texto */}
-        <Link href={"/tabs/products"} asChild>
+        <Link href={"/drawer/tabs/products"} asChild>
           <CustomButton variant="text-only" className="mb-10" color="primary">
             Productos
           </CustomButton>

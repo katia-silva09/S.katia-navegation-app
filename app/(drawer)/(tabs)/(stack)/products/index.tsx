@@ -18,7 +18,7 @@ const ProductsScreen = () => {
               
               {/* OJO AQUÍ: La ruta dinámica */}
               <Link
-                href={`/tabs/products/${item.id}`}
+                href={`/products/${item.id}`}
                 className="text-primary"
               >
                 Ver detalles
