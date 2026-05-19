@@ -13,18 +13,21 @@ const TabLayout = () => {
           tabBarIcon: ({ color }) => <Ionicons size={28} name="people-outline" color={color} />,
         }}
       />     
-       <Tabs.Screen
-        name="/home/index"
+     {/* 2. Nueva pestaña de Home independiente */}
+      <Tabs.Screen
+        name="home/index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <Ionicons size={28} name="home-outline" color={color} />,
+          title: "Home Screen",
+          tabBarIcon: ({ color }) => (
+            <Ionicons size={28} name="home-outline" color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="/favorites/index"
+        name="favorites/index"
         options={{
           title: 'Settings',
-          tabBarIcon: ({ color }) => <Ionicons size={28} name="star-outline" color={color} />,
+          tabBarIcon: ({ color }) => (<Ionicons size={28} name="star-outline" color={color} />),
         }}
       />
     </Tabs>  );

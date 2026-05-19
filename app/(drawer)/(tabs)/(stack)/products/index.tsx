@@ -3,6 +3,7 @@ import { Link } from "expo-router";
 import { FlatList, Text, View } from "react-native";
 
 const ProductsScreen = () => {
+  
   return (
     <View className="flex flex-1 px-4">
       <FlatList
