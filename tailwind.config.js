@@ -10,6 +10,12 @@ module.exports = {
   presets: [require("nativewind/preset")],
   theme: {
     extend: {
+      colors: {
+        // Definimos nuestros colores de marca
+        primary: '#49129C',
+        secondary: '#7638F3',
+        tertiary: '#F29672',
+      },
        // Configuramos nuestras fuentes personalizadas
       fontFamily: {
         'work-black': ['WorkSans-Black', 'sans-serif'],
